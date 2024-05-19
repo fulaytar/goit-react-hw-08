@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  gap: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.link {
+  color: #333; /* Темний колір для гарного контрасту на білому фоні */
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.link::before {
+  margin-left: auto;
+}
+
+.link::after,
+.link::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  transition: 0.5s;
+}
+
+.link:hover::after,
+.link:hover::before {
+  width: 100%;
+}
+
+.active {
+  color: #f44336;
+}
