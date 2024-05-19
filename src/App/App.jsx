@@ -6,6 +6,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import ContactsPage from "../pages/ContactsPage/ContactsPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>
     </Layout>
