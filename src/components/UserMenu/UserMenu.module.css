@@ -1,13 +1,13 @@
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .username {
   color: #333; /* Темний колір для гарного контрасту на білому фоні */
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -55,7 +55,7 @@
 .front {
   display: block;
   position: relative;
-  padding: 12px 27px;
+  padding: 7px 10px;
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
@@ -91,4 +91,13 @@
 
 .btn:focus:not(:focus-visible) {
   outline: none;
+}
+
+@media screen and (min-width: 650px) {
+  .front {
+    padding: 12px 20px;
+  }
+  .username {
+    font-size: 25px;
+  }
 }
