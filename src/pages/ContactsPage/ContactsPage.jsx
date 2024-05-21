@@ -26,7 +26,7 @@ export default function ContactsPage() {
           <ContactList />
         </>
       ) : (
-        <b className={css.text}>Please add your first contacts 😉</b>
+        <p className={css.text}>Please add your first contact 😉</p>
       )}
     </>
   );
