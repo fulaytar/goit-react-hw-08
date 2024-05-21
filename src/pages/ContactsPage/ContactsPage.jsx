@@ -1,13 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { useEffect } from "react";
+import { selectItems } from "../../redux/contacts/selectors";
+import css from "./ContactsPage.module.css";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
+  const items = useSelector(selectItems);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -17,8 +20,14 @@ export default function ContactsPage() {
     <>
       <PageTitle>Your contacts</PageTitle>
       <ContactForm />
-      <SearchBox />
-      <ContactList />
+      {items.length > 0 ? (
+        <>
+          <SearchBox />
+          <ContactList />
+        </>
+      ) : (
+        <b className={css.text}>Please add your first contacts 😉</b>
+      )}
     </>
   );
 }
