@@ -30,7 +30,6 @@ export default function LoginForm() {
         password: "",
       }}
       onSubmit={(values, { resetForm }) => {
-        console.log(values);
         dispatch(logIn(values))
           .unwrap()
           .then(() => {

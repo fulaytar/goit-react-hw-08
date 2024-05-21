@@ -32,7 +32,6 @@ export default function RegistrationForm() {
         password: "",
       }}
       onSubmit={(values, { resetForm }) => {
-        console.log(values);
         dispatch(register(values))
           .unwrap()
           .then(() => {
