@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./LoginForm.module.css";
 import { logIn } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -30,7 +31,18 @@ export default function LoginForm() {
       }}
       onSubmit={(values, { resetForm }) => {
         console.log(values);
-        dispatch(logIn(values));
+        dispatch(logIn(values))
+          .unwrap()
+          .then(() => {
+            toast.success("Login successful!");
+          })
+          .catch((error) => {
+            console.log(error);
+            toast.error("Login error!", {
+              duration: 4000,
+              position: "top-right",
+            });
+          });
         resetForm();
       }}
     >

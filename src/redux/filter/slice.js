@@ -5,7 +5,13 @@ const filterSlice = createSlice({
   initialState: {
     name: "",
   },
+  reducers: {
+    changeTextFilter(state, action) {
+      state.name = action.payload;
+    },
+  },
 });
 
+export const { changeTextFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;

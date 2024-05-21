@@ -1,12 +1,12 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Layout from "../components/Layout/Layout";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../pages/HomePage/HomePage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
-import ContactsPage from "../pages/ContactsPage/ContactsPage";
-import ErrorPage from "../pages/ErrorPage/ErrorPage";
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
+const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
+const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
+const ErrorPage = lazy(() => import("../pages/ErrorPage/ErrorPage"));
 
 export default function App() {
   return (
